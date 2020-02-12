@@ -8,6 +8,7 @@
             v-for="(item, i) in items"
             :key="i"
             :inactive="inactive"
+            @click.native="transitionPage(i)"
           >
              <!-- <nuxt-link to= "/help" > -->
               <v-list-item-icon>
@@ -30,16 +31,16 @@
       </v-toolbar-title>
       <v-spacer />
       <span>Ryota Nakamura</span>
-      <v-btn icon>
+      <v-btn href="https://github.com/ryo-n-cell/SNSClonePortfolio" target="_blank" icon>
         <v-icon>fab fa-github</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn href="https://twitter.com/BYEt0Vysprss9Ev" target="_blank" icon>
         <v-icon>fab fa-twitter</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn href="https://note.com/ryonjs" target="_blank" icon>
         <v-icon>far fa-sticky-note</v-icon>
       </v-btn>
-      <v-btn icon large>
+      <v-btn href="https://vuetifyjs.com/ja/" target="_blank" icon large>
         <v-avatar size="32px" item>
           <v-img src="https://cdn.vuetifyjs.com/images/logos/logo.svg" alt="Vuetify" />
         </v-avatar>
@@ -120,22 +121,21 @@ export default {
     transitionPage: function (pageId) {
       console.log(pageId)
       if (pageId === 0) {
-        location.href = '/'
+        this.$router.push('/')
       } else if (pageId === 1) {
-        location.href = '/timeline'
+        this.$router.push('/timeline')
       } else if (pageId === 2) {
-        location.href = 'directMail'
+        this.$router.push('/directMail')
       } else if (pageId === 3) {
-        this.$route.push({ path: 'notifications' })
-        // location.href = '/notifications'
+        this.$router.push('/notifications')
       } else if (pageId === 4) {
-        location.href = '/news'
+        this.$router.push('/news')
       } else if (pageId === 5) {
-        location.href = '/calendar'
+        this.$router.push('/calendar')
       } else if (pageId === 6) {
-        location.href = 'weather'
+        this.$router.push('/weather')
       } else if (pageId === 7) {
-        location.href = '/help'
+        this.$router.push('/help')
       }
     }
   }

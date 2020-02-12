@@ -31,6 +31,7 @@ id(子要素も含めると)８つ
 
 参考サイト
 https://qiita.com/shosho/items/742723142980092b61ef
+外部データfontawesome
 https://blog.cloud-acct.com/posts/spa-vuetify2-fontawesome/
 @click:stop動作
 https://techblog.roxx.co.jp/entry/2019/02/08/122914
@@ -38,3 +39,4 @@ v-bind:key
 https://reffect.co.jp/vue/v-bind-key-understand-by-developer-tool
 v-listの表示（子要素の格納など）
 https://vuetifyjs.com/ja/components/lists
+        this.$route.push({ path: 'notifications' })
