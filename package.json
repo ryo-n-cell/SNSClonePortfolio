@@ -1,8 +1,8 @@
 {
-  "name": "my-project",
+  "name": "SNSClonePortfolio",
   "version": "1.0.0",
   "description": "Nuxt.js + Vuetify.js project",
-  "author": "松田信介 <>",
+  "author": "中村亮太 <>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "axios": "^0.19.2",
     "material-design-icons": "*",
     "nuxt": "^2.2.0",
@@ -18,15 +19,19 @@
   },
   "devDependencies": {
     "@mdi/font": "^4.9.95",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.7.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-loader": "^2.1.1",
+    "eslint-loader": "^2.2.1",
     "eslint-plugin-html": "^4.0.6",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "prettier": "^1.19.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
   }

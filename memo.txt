@@ -1,0 +1,40 @@
+画面実装
+・プロフィール画面(index.vue)
+・タイムライン画面
+・ダイレクトメール一覧
+・通知画面
+・カレンダー、東京の天気予報、ニュース（外部から）をまとめたもの
+　・子階層は上記３つで
+・セッティング画面
+・ヘルプ
+※上記はサイドバーをclickしたら、画面遷移をする。
+・左下click→コメント入力をモーダル出力する
+
+
+実装予定内容
+
+実装内容
+・画面遷移のボタンを作る
+　・clickしたら対応したページへ飛ぶ
+　→@clickメソッドしたら対応するIDのページに飛ぶ。
+　　Selectpage function(id){
+  if(id === 0){
+    return nuxt to= "/"
+  } else if (id === 1){
+    return nuxt to= "/timeline"
+  } else if (id === 2){
+    return nuxt to = "/directMail"
+  } ...
+}
+id(子要素も含めると)８つ
+※idではなく、items.textで渡した文字（引数）で比較した方が良い？
+
+参考サイト
+https://qiita.com/shosho/items/742723142980092b61ef
+https://blog.cloud-acct.com/posts/spa-vuetify2-fontawesome/
+@click:stop動作
+https://techblog.roxx.co.jp/entry/2019/02/08/122914
+v-bind:key
+https://reffect.co.jp/vue/v-bind-key-understand-by-developer-tool
+v-listの表示（子要素の格納など）
+https://vuetifyjs.com/ja/components/lists
