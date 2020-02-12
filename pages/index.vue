@@ -1,15 +1,12 @@
 <template>
-  <v-layout column justify-center align-center>
+  <!-- <v-layout column justify-center align-center> -->
+  <v-layout worp>
     <v-flex xs12 sm8 md6>
-      <!-- <div class="text-xs-center">
-        <img src="/v.png" alt="Vuetify.js" class="mb-5" />
-      </div>-->
-      <v-card>
-        <v-card-title class="headline">プロフィール</v-card-title>
+      <v-card width=90%  align-center>
+        <v-card-title class="headline">プロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィールプロフィール</v-card-title>
         <v-card-text></v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" nuxt to="/timeline">Timeline</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
