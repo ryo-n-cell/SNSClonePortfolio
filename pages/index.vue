@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <!-- プロフィール -->
     <v-card
       class="mx-auto"
       max-width="1940"
@@ -42,7 +43,9 @@
         </div>
       </v-card-text>
     </v-card><br>
-    <tweetCart></tweetCart>
+    <!-- ツイートゾーン -->
+    <tweetCart v-bind="tweetCarts">
+    </tweetCart>
   </v-container>
 </template>
 
@@ -53,6 +56,11 @@ span.numbersBold{
 </style>
 
 <script>
+import tweetCart from '@/components/tweetCart'
+
 export default {
+  components: {
+    tweetCart
+  }
 }
 </script>

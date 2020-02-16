@@ -8,16 +8,14 @@
             v-for="(item, i) in items"
             :key="i"
             :inactive="inactive"
-            @click.native="transitionPage(i)"
+            @click.native="transitionPages(i)"
           >
-             <!-- <nuxt-link to= "/help" > -->
-              <v-list-item-icon>
-                <v-icon v-text="item.icon"></v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title v-text="item.text"></v-list-item-title>
-              </v-list-item-content>
-             <!-- </nuxt-link> -->
+            <v-list-item-icon>
+              <v-icon v-text="item.icon"></v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.text"></v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -118,7 +116,7 @@ export default {
     ]
   }),
   methods: {
-    transitionPage: function (pageId) {
+    transitionPages: function (pageId) {
       console.log(pageId)
       if (pageId === 0) {
         this.$router.push('/')
