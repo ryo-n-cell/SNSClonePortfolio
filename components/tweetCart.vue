@@ -5,7 +5,7 @@
       max-width="1940"
     >
       <v-row>
-        <v-col cols="12" md="1">
+        <v-col cols="auto" md="1">
           <v-avatar size="80" class="icon">
             <img
             src="../images/persons/Yuuta Suzuki.png"
@@ -20,6 +20,13 @@
           <p>16/02/2020</p>
         </v-col>
       </v-row>
+      <v-card-text class="headline font-weight-bold">
+        "Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."
+      </v-card-text>
+      <!-- トグルで<color="blue lighten-2">追加 -->
+      <v-btn class="ma-2" text icon>
+        <v-icon>mdi-thumb-up</v-icon>
+      </v-btn>
     </v-card>
   </v-container>
 </template>
