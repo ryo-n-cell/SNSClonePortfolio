@@ -21,11 +21,26 @@ layout
 ・10カラムの幅、５０％の高さのカート
 　→名前、日時、ツイート文、いいねボタン
 
+モーダルでtweetのみのカートを出して
+ツイートとして下へ積み重ねる
+
+index--data(message)
+
+TweetCart
+→indexとlayoutsとバインドさせる
+
+layouts
+
+ツイートカートdataはTweetCartコンポに渡す
+→（id,message）のちのちmessageデータはストラピに渡す。Axios
+
 ・タイムライン
 ・10カラムの幅、５０％の高さのカート
 
 
 右下click→コメント入力をモーダル出力する
+
+strapiでデータをAPI化して取得する
 
 
 
@@ -39,3 +54,5 @@ v-bind:key
 https://reffect.co.jp/vue/v-bind-key-understand-by-developer-tool
 v-listの表示（子要素の格納など）
 https://vuetifyjs.com/ja/components/lists
+
+Get URL レスポンス

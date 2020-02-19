@@ -17,7 +17,7 @@
           <v-card-title >Yuuta Suzuki</v-card-title>
         </v-col>
         <v-col md="2">
-          <p>16/02/2020</p>
+          <p>Feb 11</p>
         </v-col>
       </v-row>
       <v-card-text class="headline font-weight-bold">
@@ -33,6 +33,27 @@
 
 <script>
 export default {
-  props: ['tweetCarts']
+  props: ['tweetCarts'],
+  data () {
+    return {
+      tweet: [
+        { id: '0',
+          message: 'Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well'
+        },
+        { id: '1',
+          message: 'I love Vue.'
+        },
+        { id: '2',
+          message: '日本語久々にしゃべったわ.'
+        },
+        { id: '3',
+          message: 'I spend as much time studying as I do sleeping. '
+        },
+        { id: '4',
+          message: 'YesYesYesYesYesYesYesYesYesYesYesYesYesYesYesYesYesYesHooooooooooooooooooooooooooooo.'
+        }
+      ]
+    }
+  }
 }
 </script>
