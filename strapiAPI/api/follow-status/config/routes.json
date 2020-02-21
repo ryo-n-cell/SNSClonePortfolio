@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/follow-statuses",
+      "handler": "follow-status.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/follow-statuses/count",
+      "handler": "follow-status.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/follow-statuses/:id",
+      "handler": "follow-status.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/follow-statuses",
+      "handler": "follow-status.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/follow-statuses/:id",
+      "handler": "follow-status.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/follow-statuses/:id",
+      "handler": "follow-status.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "users_counts",
+  "info": {
+    "name": "users_count"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "followed_users_count": {
+      "type": "integer"
+    },
+    "follow_user_count": {
+      "type": "integer",
+      "required": false,
+      "unique": false
+    },
+    "user_relations": {
+      "collection": "user-relation",
+      "via": "users_counts"
+    },
+    "user_id": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "all_tweets",
+  "info": {
+    "name": "all_tweet"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "user_id": {
+      "type": "integer",
+      "unique": false,
+      "required": false
+    },
+    "create_tweet_on": {
+      "type": "datetime"
+    },
+    "tweet_message": {
+      "type": "text"
+    },
+    "accounts_authentication": {
+      "model": "accounts-authentication",
+      "via": "all_tweets"
+    },
+    "like_statuses": {
+      "collection": "like-status",
+      "via": "all_tweet"
+    }
+  }
+}

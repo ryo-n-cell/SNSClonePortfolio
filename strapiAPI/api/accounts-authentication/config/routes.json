@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/accounts-authentications",
+      "handler": "accounts-authentication.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts-authentications/count",
+      "handler": "accounts-authentication.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts-authentications/:id",
+      "handler": "accounts-authentication.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/accounts-authentications",
+      "handler": "accounts-authentication.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts-authentications/:id",
+      "handler": "accounts-authentication.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts-authentications/:id",
+      "handler": "accounts-authentication.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "user_relations",
+  "info": {
+    "name": "user_relation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "followed_user_id": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "accounts_authentication": {
+      "via": "user_relations",
+      "model": "accounts-authentication"
+    },
+    "users_counts": {
+      "via": "user_relations",
+      "collection": "users-count",
+      "dominant": true
+    },
+    "user_id": {
+      "type": "integer"
+    }
+  }
+}

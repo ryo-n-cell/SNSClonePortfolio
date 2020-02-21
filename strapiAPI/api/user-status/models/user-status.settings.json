@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "user_statuses",
+  "info": {
+    "name": "user_status"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "country": {
+      "type": "string"
+    },
+    "prefecture": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "profile": {
+      "type": "text"
+    },
+    "accounts_authentications": {
+      "via": "user_statuses",
+      "collection": "accounts-authentication"
+    },
+    "user_id": {
+      "type": "integer"
+    }
+  }
+}
