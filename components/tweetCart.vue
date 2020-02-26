@@ -3,13 +3,16 @@
     <v-card
       class="mx-auto"
       max-width="1940"
+      v-for="item in tweets"
+      :key="item.id"
     >
+        <!-- v-for="item in tweets" -->
       <v-row>
         <v-col cols="auto" md="1">
           <v-avatar size="80" class="icon">
             <img
-            src="../images/persons/Yuuta Suzuki.png"
-            alt="Yuuta Suzuki"
+            v-bind:src="icon"
+            alt="userIcon"
             >
           </v-avatar>
         </v-col>
@@ -21,10 +24,10 @@
         </v-col>
       </v-row>
       <v-card-text class="headline font-weight-bold">
-        "Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."
+        {{ item.tweet_message }}
       </v-card-text>
       <!-- トグルで<color="blue lighten-2">追加 -->
-      <v-btn class="ma-2" text icon>
+      <v-btn @click="take_API" class="ma-2" text icon>
         <v-icon>mdi-thumb-up</v-icon>
       </v-btn>
     </v-card>
@@ -32,28 +35,29 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   props: ['tweetCarts'],
   data () {
     return {
-      tweet: [
-        { id: '0',
-          message: 'Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well'
-        },
-        { id: '1',
-          message: 'I love Vue.'
-        },
-        { id: '2',
-          message: '日本語久々にしゃべったわ.'
-        },
-        { id: '3',
-          message: 'I spend as much time studying as I do sleeping. '
-        },
-        { id: '4',
-          message: 'YesYesYesYesYesYesYesYesYesYesYesYesYesYesYesYesYesYesHooooooooooooooooooooooooooooo.'
-        }
-      ]
+      id: 1,
+      tweets: [],
+      icon: ''
     }
+  },
+  methods: {
+  },
+  mounted () {
+    axios.get('https://aqueous-scrubland-89182.herokuapp.com/user-statuses/' + this.id)
+      .then(response => {
+        console.log(this.tweets)
+        console.log(response.data.icon.url)
+        this.tweets = response.data.tweets
+        this.icon = 'https://aqueous-scrubland-89182.herokuapp.com/' + response.data.icon.url
+        console.log(this.icon)
+      }).catch(err => {
+        console.log(err)
+      })
   }
 }
 </script>

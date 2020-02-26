@@ -19,7 +19,7 @@
       </v-img>
       <v-row>
         <v-col md="8">
-          <v-card-title >Yuuta Suzuki</v-card-title>
+          <v-card-title >{{ userName }}</v-card-title>
         </v-col>
         <v-col md="4">
           <v-btn
@@ -30,16 +30,13 @@
           </v-btn>
         </v-col>
       </v-row>
-      <v-card-subtitle class="pb-0">@YutaSuzuki514</v-card-subtitle>
-
+      <v-card-subtitle class="pb-0">@{{ loginId }}</v-card-subtitle>
       <v-card-text class="text--profile">
-        <div>Web&Software Developer HTML/CSS, Java Script, Vue.js＆Vutify,SQL,Linux
-        </div>
-
+        <div>{{ profile }}</div>
         <div>
           <span class="numbersBold">10</span> Following / <span class="numbersBold">10</span> Followers &nbsp;
           <v-icon class="fas fa-map-marker-alt"></v-icon>
-          Tokyo,Japan
+          {{ prefecture }},{{ country }}
         </div>
       </v-card-text>
     </v-card><br>
@@ -57,10 +54,50 @@ span.numbersBold{
 
 <script>
 import tweetCart from '@/components/tweetCart'
+// import axios from 'axios'
 
 export default {
   components: {
     tweetCart
+  },
+  data () {
+    return {
+      id: 1,
+      userName: null,
+      profile: null,
+      loginId: null,
+      prefecture: null,
+      country: null,
+      icon: null
+    }
+  },
+  mounted () {
+    // 決められたAPIを取得するため一時的に定数にしている
+    // data内のidを+してfetchでAjax通信してAPIを取得
+    const url = 'https://aqueous-scrubland-89182.herokuapp.com/user-statuses/'
+    fetch(url + this.id)
+      .then(Response => {
+        Response.json().then(userData => {
+          console.log(userData)
+          this.userName = userData.name
+          this.loginId = userData.login_id
+          this.profile = userData.profile
+          // this.following = userData.****
+          // this.followers = userData.****
+          this.prefecture = userData.prefecture
+          this.country = userData.country
+          this.icon = userData.icon
+        }).catch(err => {
+          console.error(err)
+        })
+      })
+    // const iconUrl = 'https://aqueous-scrubland-89182.herokuapp.com/uploads/7290573031ff40b08c66a3ad84d3371e.png'
+    // fetch(iconUrl)
+    //   .then(Response => {
+    //     Response.json().then(iconData => {
+    //       console.log(iconData)
+    //     })
+    //   })
   }
 }
 </script>
