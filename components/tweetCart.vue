@@ -11,7 +11,7 @@
         <v-col cols="auto" md="1">
           <v-avatar size="80" class="icon">
             <img
-            v-bind:src="icon"
+            src="../images/persons/Yuuta Suzuki.png"
             alt="userIcon"
             >
           </v-avatar>
@@ -51,10 +51,10 @@ export default {
     axios.get('https://aqueous-scrubland-89182.herokuapp.com/user-statuses/' + this.id)
       .then(response => {
         console.log(this.tweets)
-        console.log(response.data.icon.url)
+        // console.log(response.data.icon.url)
         this.tweets = response.data.tweets
-        this.icon = 'https://aqueous-scrubland-89182.herokuapp.com/' + response.data.icon.url
-        console.log(this.icon)
+        // this.icon = 'https://aqueous-scrubland-89182.herokuapp.com/' + response.data.icon.url
+        // console.log(this.icon)
       }).catch(err => {
         console.log(err)
       })
