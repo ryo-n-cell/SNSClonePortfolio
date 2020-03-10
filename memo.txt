@@ -43,6 +43,10 @@ layouts
 strapiでデータをAPI化して取得する
 
 
+画像は何らかのAPIを作成してStrapiに投げてこちらへ引っ張り出すしかないのかしら、、、
+
+tweetCartコンポーネントを各ユーザーに分離できるように構造を作る
+
 
 参考サイト
 https://qiita.com/shosho/items/742723142980092b61ef

@@ -11,7 +11,7 @@
         <v-col cols="auto" md="1">
           <v-avatar size="80" class="icon">
             <img
-            src="../images/persons/Yuuta Suzuki.png"
+            src="../images/persons/1.jpeg"
             alt="userIcon"
             >
           </v-avatar>

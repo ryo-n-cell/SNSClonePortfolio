@@ -7,7 +7,6 @@
           <v-list-item
             v-for="(item, i) in items"
             :key="i"
-            :inactive="inactive"
             @click.native="transitionPages(i)"
           >
             <v-list-item-icon>
@@ -63,10 +62,10 @@
               <v-row align="center" class="mr-0">
                 <v-avatar size="40px" class="mx-3">
                   <img 
-                  src="../images/persons/Yuuta Suzuki.png" 
+                  src="../images/persons/1.jpeg" 
                   alt = "Yuuta Suzuki" >
                 </v-avatar>
-                <v-text-field placeholder="Yuta Suzuki" />
+                Yuta Suzuki
               </v-row>
             </v-col>
             <v-col cols="12">
@@ -99,32 +98,42 @@ export default {
       { icon: 'mdi-email-outline', url: '/directMail', text: 'ダイレクトメール' },
       { icon: 'mdi-bell-ring-outline', url: '/notifications', text: '通知' },
       { icon: 'mdi-card-text-outline', url: '/news', text: 'ニュース' },
-      { icon: 'mdi-calendar-month', url: '/calender', text: 'カレンダー' },
+      { icon: 'mdi-calendar-month', url: '/calendar', text: 'カレンダー' },
       { icon: 'mdi-cloud-outline', url: '/weather', text: '天気' },
       { icon: 'mdi-help-circle', url: '/help', text: 'ヘルプ' }
     ]
   }),
   methods: {
     transitionPages: function (pageId) {
-      console.log(pageId)
-      if (pageId === 0) {
-        this.$router.push('/')
-      } else if (pageId === 1) {
-        this.$router.push('/timeline')
-      } else if (pageId === 2) {
-        this.$router.push('/directMail')
-      } else if (pageId === 3) {
-        this.$router.push('/notifications')
-      } else if (pageId === 4) {
-        this.$router.push('/news')
-      } else if (pageId === 5) {
-        this.$router.push('/calendar')
-      } else if (pageId === 6) {
-        this.$router.push('/weather')
-      } else if (pageId === 7) {
-        this.$router.push('/help')
+      for (let i = 0; this.items.length >= i; i++) {
+        if (pageId === i) {
+          return this.$router.push(this.items[i].url)
+        }
       }
     }
   }
+  // methods: {
+  // クソコードここに眠る
+  //   transitionPages: function (pageId) {
+  //     console.log(pageId)
+  //     if (pageId === 0) {
+  //       this.$router.push('/')
+  //     } else if (pageId === 1) {
+  //       this.$router.push('/timeline')
+  //     } else if (pageId === 2) {
+  //       this.$router.push('/directMail')
+  //     } else if (pageId === 3) {
+  //       this.$router.push('/notifications')
+  //     } else if (pageId === 4) {
+  //       this.$router.push('/news')
+  //     } else if (pageId === 5) {
+  //       this.$router.push('/calendar')
+  //     } else if (pageId === 6) {
+  //       this.$router.push('/weather')
+  //     } else if (pageId === 7) {
+  //       this.$router.push('/help')
+  //     }
+  //   }
+  // }
 }
 </script>

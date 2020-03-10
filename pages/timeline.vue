@@ -11,13 +11,13 @@
         <v-col cols="auto" md="1">
           <v-avatar size="80" class="icon">
             <img
-            src="../images/persons/Yuuta Suzuki.png"
+            v-bind:src="item.userIcon_URL"
             alt="userIcon"
             >
           </v-avatar>
         </v-col>
         <v-col md="9">
-          <v-card-title >{{ item.userName }}</v-card-title>
+          <v-card-title class="display-1">{{ item.userName }}</v-card-title>
         </v-col>
         <v-col md="2">
           <p>{{ item.created_At }}</p>
@@ -40,7 +40,8 @@ export default {
   props: ['timeLine'],
   data () {
     return {
-      allTweets: []
+      allTweets: [],
+      userIcon_SRC: []
     }
   },
   methods: {
@@ -53,6 +54,8 @@ export default {
         for (let i = 0; i < tweetsLength; i++) {
           let item = {
             tweet_ID: response.data[i].id,
+            user_status_ID: response.data[i].user_status_id,
+            // userIcon_URL: '../../images/persons/' + response.data[i].user_status_id + '.jpeg',
             userName: response.data[i].users_statuses[0].name,
             created_At: response.data[i].created_at,
             tweetMessage: response.data[i].tweet_message

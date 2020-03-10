@@ -12,25 +12,20 @@
       >
         <v-avatar size="150" class="icon">
           <img
-          src="../images/persons/Yuuta Suzuki.png"
+          src="../images/persons/1.jpeg"
           alt="Yuuta Suzuki"
           >
        </v-avatar>
       </v-img>
       <v-row>
-        <v-col md="8">
-          <v-card-title >{{ userName }}</v-card-title>
+        <v-col md="8" class="py-0">
+          <v-card-title class="display-1">{{ userName }}</v-card-title>
         </v-col>
         <v-col md="4">
-          <v-btn
-            color="orange"
-            text
-          >
-            Edit profile
-          </v-btn>
+        <v-btn rounded color="primary" dark @click="profileBtn = !profileBtn">Profile Edit</v-btn>
         </v-col>
       </v-row>
-      <v-card-subtitle class="pb-0">@{{ loginId }}</v-card-subtitle>
+      <v-card-subtitle class="py-0">@{{ loginId }}</v-card-subtitle>
       <v-card-text class="text--profile">
         <div>{{ profile }}</div>
         <div>
@@ -40,6 +35,34 @@
         </div>
       </v-card-text>
     </v-card><br>
+    <!-- プロフィールモーダル -->
+    <v-dialog v-model="profileBtn" width="800px">
+      <v-card>
+        <v-card-title class="gray darken-2">profile Edit</v-card-title>
+        <v-container>
+          <v-col cols="12">
+            <v-text-field placeholder="name" />
+          </v-col>
+          <v-row justify="center" cols="10">
+            <!-- <v-icon class="fas fa-map-marker-alt"></v-icon> -->
+            <v-col col-5>
+              <v-text-field placeholder="Prefecture" />
+            </v-col>
+            <v-col col-5>
+              <v-text-field placeholder="Country" />
+            </v-col>
+            <v-col cols="12">
+              <v-text-field placeholder="profile" />
+            </v-col>
+          </v-row>
+          <v-card-actions>
+          <v-spacer />
+            <v-btn text color="primary" @click="dialog = false">Cancel</v-btn>
+            <v-btn text @click="dialog = false">Edit</v-btn>
+          </v-card-actions>
+        </v-container>
+      </v-card>
+    </v-dialog>
     <!-- ツイートゾーン -->
     <tweetCart v-bind="tweetCarts">
     </tweetCart>
@@ -62,6 +85,7 @@ export default {
   },
   data () {
     return {
+      profileBtn: false,
       id: 1,
       userName: null,
       profile: null,
@@ -78,7 +102,6 @@ export default {
     fetch(url + this.id)
       .then(Response => {
         Response.json().then(userData => {
-          console.log(userData)
           this.userName = userData.name
           this.loginId = userData.login_id
           this.profile = userData.profile
@@ -91,13 +114,6 @@ export default {
           console.error(err)
         })
       })
-    // const iconUrl = 'https://aqueous-scrubland-89182.herokuapp.com/uploads/7290573031ff40b08c66a3ad84d3371e.png'
-    // fetch(iconUrl)
-    //   .then(Response => {
-    //     Response.json().then(iconData => {
-    //       console.log(iconData)
-    //     })
-    //   })
   }
 }
 </script>
