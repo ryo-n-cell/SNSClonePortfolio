@@ -49,8 +49,8 @@ export default {
   mounted () {
     axios.get('https://aqueous-scrubland-89182.herokuapp.com/all-tweets')
       .then(response => {
-        let tweetsLength = response.data.length
         console.log(response)
+        let tweetsLength = response.data.length
         for (let i = 0; i < tweetsLength; i++) {
           let item = {
             tweet_ID: response.data[i].id,

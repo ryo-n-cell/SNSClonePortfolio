@@ -38,7 +38,7 @@
     <!-- プロフィールモーダル -->
     <v-dialog v-model="profileBtn" width="800px">
       <v-card>
-        <v-card-title class="gray darken-2">profile Edit</v-card-title>
+        <v-card-title class="gray darken-2">Profile Edit</v-card-title>
         <v-container>
           <v-col cols="12">
             <v-text-field placeholder="name" />
@@ -57,8 +57,8 @@
           </v-row>
           <v-card-actions>
           <v-spacer />
-            <v-btn text color="primary" @click="dialog = false">Cancel</v-btn>
-            <v-btn text @click="dialog = false">Edit</v-btn>
+            <v-btn text color="primary" @click="profileBtn = false">Cancel</v-btn>
+            <v-btn text @click="profileBtn = false">Edit</v-btn>
           </v-card-actions>
         </v-container>
       </v-card>
