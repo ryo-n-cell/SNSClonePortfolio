@@ -3,8 +3,10 @@
     <v-card
       class="mx-auto"
       max-width="1940"
-      v-for="item in tweets"
-      :key="item.id"
+      v-for="(item,index) in tweets"
+      v-bind:item="item"
+      v-bind:index="index"
+      v-bind:key="item.id"
     >
         <!-- v-for="item in tweets" -->
       <v-row>
@@ -28,8 +30,8 @@
       </v-card-text>
       <!-- トグルで<color="blue lighten-2">追加 -->
       <v-btn class="ma-2" text icon>
-        <v-icon @click="toggle_switch(item.tweet_ID)">mdi-thumb-up</v-icon>
-        <!-- <v-icon v-show="item.likeBtn = true" @click="toggle_switch(item.tweet_ID)" color="blue lighten-2">mdi-thumb-up</v-icon> -->
+        <!-- トグルで色を変える。trueで赤に変える -->
+        <v-icon @click="toggle_switch(index)" v-bind:class ="{ active: isActive }" color="blue lighten-2">mdi-thumb-up</v-icon>
       </v-btn>
     </v-card>
   </v-container>
